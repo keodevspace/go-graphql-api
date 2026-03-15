@@ -1,15 +1,14 @@
-// server layer for the GraphQL API
-// internal/database.go
+// Package internal provides a mock data store.
 package internal
 
 import "github.com/keodevspace/go-graphql-api/graph/model"
 
 type DB struct {
-	Tasks []*model.Task
+	Tasks []*model.Task // Maiúsculo para ser visível fora da pasta
 }
 
 func NewDB() *DB {
 	return &DB{
-		Tasks: []*model.Task{}, // Initializing an empty slice (List)
+		Tasks: make([]*model.Task, 0),
 	}
 }
