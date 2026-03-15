@@ -1,0 +1,20 @@
+# graph/schema.graphqls
+# define the contract for the GraphQL API
+
+type Task {
+  id: ID!
+  title: String!
+  isCompleted: Boolean!
+}
+
+input NewTaskInput {
+  title: String!
+}
+
+type Query {
+  tasks: [Task!]!
+}
+
+type Mutation {
+  createTask(input: NewTaskInput!): Task!
+}
